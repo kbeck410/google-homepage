@@ -1,218 +1,188 @@
-@charset "UTF-8";
-
-html {
-    --border-color: #ddd;
-    --button-search-font: #3c3c3c;
-    --button-search-background: #f8f9fa;
-    --footer-background: #f2f2f2;
-    --footer-font: #70757a;
-    --footer-font-hover: #3c4043;
-    --footer-font-active: #ea4335;
-    font-size: 60%;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: arial, sans-serif;
 }
 
 body {
-    font-family: arial;
-    font-size: 1.5 rem;
-    line-height: 1.5;
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-img {
-    display: block;
-    width: 100%;
-}
-
-input {
-    border: none;
-    font-family: inherit;
-    cursor: pointer;
-}
-
-button:focus {
-    outline: none;
-}
-
-.nav {
-    width: auto;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    margin-top: 1.5 rem;
-    font-size: 1.3 rem;
-}
-
-.nav-link {
-    margin-right: 1.5 rem;
-    opacity: 0.85;
-}
-
-.nav-link:hover {
-    text-decoration: underline;
-}
-
-.button-apps {
-    width: 10px;
-    height: 10px;
-    margin-right: 1.5rem;
-    background-color: #fff; 
-    background-position: -132px -38px;
-    
-}
-
-.button-apps:hover,
-.button-apps:focus {
-  opacity: 0.85;
-}
-
-.user-avatar img {
-  height: 34px;
-  width: 34px;
-  border: 1px solid #ddd;
-  border-radius: 50%;
-  margin-right: 3rem;
-}
-
-.user-avatar:hover img {
-  border: 1px solid #aaa;
-}
-
-/* Currently using user icon */
-
-
-
-/* MAIN */
-
-.main {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  margin-top: 15rem;
+  min-height: 100vh;
 }
 
-.logo {
-  width: 272px;
-  height: 92px;
-  margin-bottom: 3rem;
-}
-
-.search-buttons {
+nav {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
+  margin-right: 30px;
+  margin-top: 14px;
+}
+
+nav a {
+  font-size: 13px;
+  display: inline-block;
+  line-height: 24px;
+  font-weight: 400;
+  color: rgb(0,0,0,0.87);
+  cursor: pointer;
+  padding: 5px 6.7px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+  opacity: .85;
+}
+
+nav img {
+  width: 34px;
+  padding: 5px;
+  margin: auto 7px;
+  cursor: pointer; 
+}
+
+nav img:hover {
+  opacity: .8;
+}
+
+nav button {
+  border: 1px solid #4285f4;
+  font-weight: bold;
+  outline: none;
+  background: #4285f4;
+  color: #fff;
+  padding: 7px 12px;
+  border-radius: 3px;
+  margin-left: 7px;
+  cursor: pointer;
+}
+
+.section-1 {
+  flex: 1;
+}
+
+.section-1 .logo {
+  display: block;
+  margin: 0px auto;
+  margin-top: 107px;
+}
+
+.s-box {
   width: 580px;
-  padding: 1rem;
-  padding-right: 1.5rem;
-  border: 0.1px solid var(--border-color);
-  border-radius: 30px;
+  margin: 0px auto;
+  position: relative;
+  margin-top: -8px;
+  text-align: center;
 }
 
-.s-input:hover,
-.s-input:focus-within {
-  border-color: white;
-  box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+.s-box .s-input {
+  display: block;
+  border: 1px solid #ddd;
+  color: rgb(0,0,0,0.87);
+  font-size: 16px;
+  padding: 13px;
+  padding-left: 45px;
+  border-radius: 25px;
+  width: 100%;
+  transition: box-shadow 100ms;
+  outline: none;
 }
 
-.search-icon {
-  width: 25px;
-  height: 25px;
-  margin-right: 1rem;
+.s-box .s-input {
+  border: 1px solid #fff;
+  box-shadow: 0 0 2px rgb(0,0,0,0.05),
+              0 0 2px rgb(0,0,0,0.05),
+              0 0 2px rgb(0,0,0,0.05),
+              0 0 2px rgb(0,0,0,0.05),
+              0 0 2px rgb(0,0,0,0.05),
+              0 0 2px rgb(0,0,0,0.05),
+              0 0 2px rgb(0,0,0,0.05);
 }
 
-.s-input {
-  width: 90%;
-  font-size: 1.6rem;
+.s-box .search-icon {
+  width: 20px;
+  opacity: .4;
+  position: absolute;
+  top: 13px;
+  left: 14px;
 }
 
-.vs-icon {
-  width: 25px;
-  height: 25px;
-}
-
-.search-buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 2.4rem;
+.s-box .vs-icon {
+  width: 14px;
+  position: absolute;
+  top: 13px;
+  right: 24px;
 }
 
 .s-btn {
-  min-width: 54px;
-  height: 36px;
-  padding: 0 2rem;
   border: 1px solid transparent;
-  border-radius: 5px;
-  margin: 0.7rem;
-  background-color: var(--button-search-background);
-  color: var(--button-search-font);
-  font-size: 1.4rem;
+  padding: 9px 15px;
+  color: #666;
+  font-size: 14px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-right: 10px;
+  margin-top: 28px;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 100ms;
 }
 
 .s-btn:hover {
-  border-color: #dadce0;
-  box-shadow: 0 1px 1px rgb(0 0 0 / 10%);
+  border: 1px solid #aaa;
 }
 
-.s-btn:focus {
-  border-color: blue;
+.lang {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 13px;
+  color: #111;
 }
 
-/* FOOTER */
-
-.foot {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  border: 1px solid var(--border-color);
-  background: var(--footer-background);
-  color: var(--footer-font);
-  font-size: 1.4rem;
+.lang a {
+margin-left: 5px;
+color: #1a0dab;
 }
 
-.section,
-.section-right {
-  display: flex;
+.lang:hover {
+text-decoration: underline;
 }
 
-.section-right {
-  margin-right: 3rem;
+footer {
+  background: #f2f2f2;
 }
 
-.footer-link {
-  display: block;
-  padding: 1rem 0 1rem 3rem;
+footer h4 {
+  color: rgba(0,0,0,0.54);
+  font-size: 15px;
+  line-height: 39.5px;
+  font-weight: 400;
+  padding-left: 29px;
+  border: 1px solid #eee;
 }
 
-.footer-link:hover {
-  text-decoration: underline;
-  color: var(--footer-font-hover);
+footer a {
+  color: #5f6368;
+  display: inline-block;
+  padding: 12px 11.3px;
+  font-size: 14px;
 }
-
-.footer-link:active {
-  color: var(--footer-font-active);
-}
-
-/* Media queries */
-
-@media (max-width: 660px) {
-  .footer {
-    flex-direction: column;
+footer a:hover {
+    text-decoration: underline;
   }
 
-  .s-box {
-    width: 80%;
+  .links {
+    border-top: 1px solid #ddd;
+    display: flex;
   }
 
-  html {
-    font-size: 50%;
+  .link-1 {
+    padding-left: 18.7px;
+    flex: 1;
   }
-}
+
+  .link-2 {
+    padding-right: 18.7px;
+  }
+
